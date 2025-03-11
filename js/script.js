@@ -30,6 +30,12 @@ btnChutar.addEventListener('click',function(){
     if(numeroEscolhido === numeroSecreto){
         aviso.textContent = 'Parabens você acertou o numero secreto!'
         aviso.classList.add('acertou')
+
+        setTimeout(function(){
+            aviso.textContent = ''
+            aviso.classList.remove('acertou')
+            gameOver()
+        },3000)
     }
     if(numeroEscolhido !== numeroSecreto){
         if(numeroSecreto > numeroEscolhido){
@@ -54,3 +60,7 @@ btnChutar.addEventListener('click',function(){
     },3000)
 })
 
+// funcao gameOver
+function gameOver(){
+    return window.location.reload(true)
+}
