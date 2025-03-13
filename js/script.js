@@ -14,14 +14,14 @@ cxInputNumber.addEventListener('blur',function(){
 
     if(validaInput <= 0 || validaInput > 10){
         aviso.textContent = 'escolha valor entre 1 e 10'
-        aviso.classList.add('validacao')
+        aviso.classList.add('errou')
     }
 
     setTimeout(function(){
         aviso.textContent = ''
-        aviso.classList.remove('validacao')
+        aviso.classList.remove('errou')
         cxInputNumber.value = ''
-    },3000)
+    },4000)
 })
 
 // jogar
@@ -35,9 +35,9 @@ btnChutar.addEventListener('click',function(){
             aviso.textContent = ''
             aviso.classList.remove('acertou')
             gameOver()
-        },3000)
+        },4000)
     }
-    if(numeroEscolhido !== numeroSecreto){
+    if(numeroEscolhido <= 10 && numeroEscolhido > 0 && numeroSecreto <= 10 && numeroSecreto > 0){
         if(numeroSecreto > numeroEscolhido){
             aviso.textContent = `O numero secreto é Maior que ${numeroEscolhido}`
             aviso.classList.add('validacao')
@@ -47,6 +47,9 @@ btnChutar.addEventListener('click',function(){
             aviso.classList.add('validacao')
         }
     }
+
+    //  if(numeroEscolhido !== numeroSecreto){
+        
     // else if(numeroEscolhido !== numeroSecreto){
     //     aviso.textContent = 'Você não acertou o número secreto :('
     //     aviso.classList.add('errou')
