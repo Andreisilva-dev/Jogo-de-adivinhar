@@ -60,10 +60,10 @@ btnChutar.addEventListener('click',function(){
         aviso.classList.remove('acertou')
         aviso.classList.remove('errou')
         aviso.classList.remove('validacao')
-    },3000)
+    },4000)
 })
 
-// funcao gameOver
+// funcao gameOver atualiza a pagina pra um novo nº secreto
 function gameOver(){
     return window.location.reload(true)
 }
