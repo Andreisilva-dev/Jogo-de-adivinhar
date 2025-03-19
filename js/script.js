@@ -7,6 +7,9 @@ let cxInputNumber = document.querySelector('#inputNumero')
 let btnChutar     = document.querySelector('#btnChutar')
 let aviso         = document.querySelector('#aviso')
 
+// musica
+let musica = document.querySelector('#musicaDeFundo')
+
 // validação de dado
 cxInputNumber.addEventListener('blur',function(){
     let validaInput = Number(cxInputNumber.value)
@@ -67,3 +70,22 @@ btnChutar.addEventListener('click',function(){
 function gameOver(){
     return window.location.reload(true)
 }
+
+// manipulação de musica
+function tocarMusicaDeFundo(){
+    musica.play();
+}
+
+function ativarDesativarMusica(){
+    if(musica.muted){
+        musica.muted = false;
+    } else {
+        musica.muted = true;
+    }
+}
+
+function pausarMusicaDeFundo(){
+    musica.pause();
+    musica.currentTime = 0;
+}
+
